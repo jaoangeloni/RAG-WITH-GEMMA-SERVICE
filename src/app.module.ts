@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { DocumentModule } from './modules/document/document.module';
+import { ChatModule } from './modules/chat/chat.module';
 
 
 @Module({
@@ -9,7 +10,8 @@ import { DocumentModule } from './modules/document/document.module';
       isGlobal: true,
       envFilePath: '.env',
     }),
-    DocumentModule
+    DocumentModule,
+    ChatModule
   ],
 })
 export class AppModule { }
