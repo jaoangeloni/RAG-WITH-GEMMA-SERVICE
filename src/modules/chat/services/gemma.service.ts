@@ -14,12 +14,14 @@ export class GemmaService implements ILLMProvider {
     ): Promise<string> {
         try {
             const prompt = this.buildPrompt(query, context);
+            console.log(prompt)
+
             this.logger.log('Starting gemma request...');
 
             const response = await axios.post(
                 `${this.gemmaUrl}/api/generate`,
                 {
-                    model: "gemma3.1:8b",
+                    model: "gemma3:1b",
                     prompt,
                     stream: true,
                 },
